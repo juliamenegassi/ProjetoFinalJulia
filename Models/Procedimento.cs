@@ -22,5 +22,17 @@ namespace ProjetoFinalJulia.Models
         [ForeignKey("TipoProcedimentoId")]
         public int TipoProcedimentoId { get; set; }
         public TipoProcedimento? TipoProcedimento { get; set; }
+
+        [ForeignKey("LocalRealizacaoId")]
+        public int LocalRealizacaoId { get; set; }
+        public LocalRealizacao? LocalRealizacao { get; set; }
+
+        [Column("DataRealizacao")]
+        [Display(Name = "Data da Realização")]
+        public DateTime DataRealizacao { get; set; }
+
+        [Column("ObservacaoRealizacao")]
+        [Display(Name = "Observação da Realização")]
+        public string ObservacaoRealizacao { get; set; } = string.Empty;
     }
 }

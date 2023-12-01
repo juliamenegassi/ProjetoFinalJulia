@@ -22,5 +22,17 @@ namespace ProjetoFinalJulia.Models
         [ForeignKey("ColaboradorId")]
         public int ColaboradorId { get; set; }
         public Colaborador? Colaborador { get; set; }
+
+        [ForeignKey("LocalId")]
+        public int LocaRealizacaolId { get; set; }
+        public LocalRealizacao? LocaRealizacao { get; set; }
+
+        [Column("DataRealizacao")]
+        [Display(Name = "Data da Realização")]
+        public DateTime DataRealizacao { get; set; }
+
+        [Column("ObservacaoRealizacao")]
+        [Display(Name = "Observação da Realização")]
+        public string ObservacaoRealizacao { get; set; } = string.Empty;
     }
 }

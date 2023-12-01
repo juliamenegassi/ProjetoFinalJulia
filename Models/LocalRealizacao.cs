@@ -9,7 +9,7 @@ namespace ProjetoFinalJulia.Models
     {
         [Column("LocalRealizacaoId")]
         [Display(Name = "Id do Local de Realização")]
-        public int ColaboradorId { get; set; }
+        public int LocalRealizacaoId { get; set; }
 
         [Column("LocalRealizacaoNome")]
         [Display(Name = "Nome do Local")]
