@@ -4,12 +4,12 @@ using System.Xml.Linq;
 
 namespace ProjetoFinalJulia.Models
 {
-    [Table("procedimento")]
+    [Table("Procedimento")]
     public class Procedimento
     {
-        [Column("ProcedimentoId")]
+        [Column("Id")]
         [Display(Name = "Id do Procedimento")]
-        public int ProcedimentoId { get; set; }
+        public int Id { get; set; }
 
         [Column("ProcedimentoNome")]
         [Display(Name = "Procedimento")]
@@ -21,18 +21,8 @@ namespace ProjetoFinalJulia.Models
 
         [ForeignKey("TipoProcedimentoId")]
         public int TipoProcedimentoId { get; set; }
+
+        [Display(Name = "Tipo Procedimento")]
         public TipoProcedimento? TipoProcedimento { get; set; }
-
-        [ForeignKey("LocalRealizacaoId")]
-        public int LocalRealizacaoId { get; set; }
-        public LocalRealizacao? LocalRealizacao { get; set; }
-
-        [Column("DataRealizacao")]
-        [Display(Name = "Data da Realização")]
-        public DateTime DataRealizacao { get; set; }
-
-        [Column("ObservacaoRealizacao")]
-        [Display(Name = "Observação da Realização")]
-        public string ObservacaoRealizacao { get; set; } = string.Empty;
     }
 }

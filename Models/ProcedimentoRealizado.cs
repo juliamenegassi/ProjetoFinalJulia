@@ -7,25 +7,27 @@ namespace ProjetoFinalJulia.Models
     [Table("ProcedimentoRealizado")]
     public class ProcedimentoRealizado
     {
-        [Column("ProcedimentoRealizadoId")]
+        [Column("Id")]
         [Display(Name = "Id do Procedimento Realizado")]
-        public int ProcedimentoRealizadoId { get; set; }
+        public int Id { get; set; }
 
         [ForeignKey("ClienteId")]
-        public int ClienteId { get; set; }
+        public int? ClienteId { get; set; }
         public Cliente? Cliente { get; set; }
 
         [ForeignKey("ProcedimentoId")]
-        public int ProcedimentoId { get; set; }
+        public int? ProcedimentoId { get; set; }
         public Procedimento? Procedimento { get; set; }
 
         [ForeignKey("ColaboradorId")]
-        public int ColaboradorId { get; set; }
+        public int? ColaboradorId { get; set; }
         public Colaborador? Colaborador { get; set; }
 
-        [ForeignKey("LocalId")]
-        public int LocaRealizacaolId { get; set; }
-        public LocalRealizacao? LocaRealizacao { get; set; }
+        [ForeignKey("LocalRealizacaoId")]
+        public int? LocalRealizacaoId { get; set; }
+
+        [Display(Name = "Local Realização")]
+        public LocalRealizacao? LocalRealizacao { get; set; }
 
         [Column("DataRealizacao")]
         [Display(Name = "Data da Realização")]
@@ -33,6 +35,9 @@ namespace ProjetoFinalJulia.Models
 
         [Column("ObservacaoRealizacao")]
         [Display(Name = "Observação da Realização")]
+
+
         public string ObservacaoRealizacao { get; set; } = string.Empty;
     }
 }
+

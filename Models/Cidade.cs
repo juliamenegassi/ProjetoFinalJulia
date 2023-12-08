@@ -7,9 +7,9 @@ namespace ProjetoFinalJulia.Models
     [Table("Cidade")]
     public class Cidade
     {
-        [Column("CidadeId")]
+        [Column("Id")]
         [Display(Name = "Id da Cidade")]
-        public int CidadeId { get; set; }
+        public int Id { get; set; }
 
         [Column("CidadeNome")]
         [Display(Name = "Nome da Cidade")]

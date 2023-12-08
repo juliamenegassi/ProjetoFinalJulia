@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ProjetoFinalJulia.Models.TipoColaborador>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Tipo Colaborador</h1>
+
+<p>
+    <a class="btn-criar" asp-action="Create">Criar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoColaboradorNome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoColaboradorNome)
+            </td>
+            <td>
+                <a class="botao" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a class="botao" asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a class="botao" asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

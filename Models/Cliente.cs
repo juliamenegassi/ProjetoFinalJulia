@@ -7,9 +7,9 @@ namespace ProjetoFinalJulia.Models
     [Table("Cliente")]
     public class Cliente
     {
-        [Column("ClienteId")]
+        [Column("Id")]
         [Display(Name = "Id do Cliente")]
-        public int ClienteId { get; set; }
+        public int Id { get; set; }
 
         [Column("ClienteNome")]
         [Display(Name = "Nome")]

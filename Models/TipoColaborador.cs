@@ -4,12 +4,12 @@ using System.Xml.Linq;
 
 namespace ProjetoFinalJulia.Models
 {
-    [Table("")]
+    [Table("TipoColaborador")]
     public class TipoColaborador
     {
-        [Column("TipoColaboradorId")]
+        [Column("Id")]
         [Display(Name = "Id do Tipo Colaborador")]
-        public int TipoColaboradorId { get; set; }
+        public int Id { get; set; }
 
         [Column("TipoColaboradorNome")]
         [Display(Name = "Tipo do Colaborador")]

@@ -15,4 +15,67 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: #E1F9FF !important;
+}
+.menu {
+    background-color: #BCF1FF !important;
+    text-align:center !important;
+}
+.footer {
+    background-color: #BCF1FF !important;
+}
+   
+.btn-criar {
+    text-decoration: none;
+    color: #54AAC2 !important;
+    border: 1px solid #54AAC2 !important;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: transparent;
+}
+.a {
+    text-decoration: none;
+    color: #54AAC2 !important;
+}
+.btn-primary {
+    background-color: #54AAC2 !important;
+}
+a {
+    color: #54AAC2 !important;
+}
+
+.img-logo {
+    width: 65px;
+    height: 60px;
+    margin-right: 70px;
+}
+.img-logo img {
+    width: 100%;
+}
+.nav-item :hover {
+    color: #54AAC2 !important;
+}
+.descricao {
+    width: 80%;
+    height: 80%;
+    margin-left: 114px;
+}
+.bemvindo {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #54AAC2 !important;
+}
+.privacidade {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #54AAC2 !important;
+}
+.botao {
+    text-decoration: none;
+}
+
+.img-banner img{
+    width: 500px;
+    width: 932px;
+}
+.rodape {
+    margin-left: 34px;
 }

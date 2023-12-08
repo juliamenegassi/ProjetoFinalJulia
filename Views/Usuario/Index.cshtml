@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ProjetoFinalJulia.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Usuário</h1>
+
+<p>
+    <a class="btn-criar" asp-action="Create">Criar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioSenha)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioNome)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.UsuarioEmail)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.UsuarioSenha)
+            </td>
+            <td>
+                <a class="botao" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a class="botao" asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a class="botao" asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

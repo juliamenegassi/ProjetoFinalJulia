@@ -1,0 +1,59 @@
+﻿@model ProjetoFinalJulia.Models.ProcedimentoRealizado
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<h4>Procedimento Realizado</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="ClienteId" class="control-label">Cliente</label>
+                <select asp-for="ClienteId" class="form-control" asp-items="ViewBag.ClienteId"></select>
+                <span asp-validation-for="ClienteId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProcedimentoId" class="control-label">Procedimento</label>
+                <select asp-for="ProcedimentoId" class="form-control" asp-items="ViewBag.ProcedimentoId"></select>
+                <span asp-validation-for="ProcedimentoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ColaboradorId" class="control-label">Colaborador</label>
+                <select asp-for="ColaboradorId" class="form-control" asp-items="ViewBag.ColaboradorId"></select>
+                <span asp-validation-for="ColaboradorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocalRealizacaoId" class="control-label">Local</label>
+                <select asp-for="LocalRealizacaoId" class="form-control" asp-items="ViewBag.LocalRealizacaoId"></select>
+                <span asp-validation-for="LocalRealizacaoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataRealizacao" class="control-label"></label>
+                <input asp-for="DataRealizacao" class="form-control" />
+                <span asp-validation-for="DataRealizacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ObservacaoRealizacao" class="control-label"></label>
+                <input asp-for="ObservacaoRealizacao" class="form-control" />
+                <span asp-validation-for="ObservacaoRealizacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="a" asp-action="Index">Voltar para a lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

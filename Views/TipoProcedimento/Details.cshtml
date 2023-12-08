@@ -1,0 +1,24 @@
+﻿@model ProjetoFinalJulia.Models.TipoProcedimento
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Tipo Procedimento</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoProcedimentoNome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TipoProcedimentoNome)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="a" asp-action="Editar" asp-route-id="@Model?.Id">Editar</a> |
+    <a class="a" asp-action="Index">Voltar para a lista</a>
+</div>

@@ -1,0 +1,80 @@
+﻿@model IEnumerable<ProjetoFinalJulia.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cliente</h1>
+
+<p>
+    <a class="btn-criar" asp-action="Create">Criar Novo</a>
+</p>
+<div>
+    @using (Html.BeginForm("Index", "Cliente", FormMethod.Get))
+    {
+        <p>
+            Digite aqui sua pesquisa: @Html.TextBox("pesquisa")
+            <input class="btn btn-primary" type="submit" value="Pesquisar" />
+        </p>
+    }
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteCpf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteSexo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteTelefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteEndereco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteNumero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteCpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteSexo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteTelefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteEndereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteNumero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cidade.NomeCidade)
+            </td>
+            <td>
+                <a class="botao" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a class="botao" asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a class="botao" asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

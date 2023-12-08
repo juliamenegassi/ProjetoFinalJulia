@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ProjetoFinalJulia.Models.ProcedimentoRealizado>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Procedimento Realizado</h1>
+
+<p>
+    <a class="btn-criar" asp-action="Create">Criar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Procedimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Colaborador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocalRealizacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataRealizacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ObservacaoRealizacao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.ClienteNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Procedimento.ProcedimentoNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Colaborador.ColaboradorNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocalRealizacao.LocalRealizacaoNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataRealizacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ObservacaoRealizacao)
+            </td>
+            <td>
+                <a class="botao" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a class="botao" asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a class="botao" asp-action="Delete" asp-route-id="@item.Id">Deletar</a> |
+                <a class="botao" asp-action="Imprimir" asp-route-id="@item.Id">Imprimir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,15 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Xml.Linq;
 
 namespace ProjetoFinalJulia.Models
 {
-    [Table("Colaborador")]
+   
     public class Colaborador
     {
-        [Column("ColaboradorId")]
+        [Column("Id")]
         [Display(Name = "Id do Colaborador")]
-        public int ColaboradorId { get; set; }
+        public int Id { get; set; }
 
         [Column("ColaboradorNome")]
         [Display(Name = "Nome")]
@@ -33,6 +32,8 @@ namespace ProjetoFinalJulia.Models
 
         [ForeignKey("TipoColaboradorId")]
         public int TipoColaboradorId { get; set; }
-        public TipoColaborador? TipoColaborador { get; set; }
+
+        [Display(Name = "Tipo Colaborador")]
+        public TipoColaborador?  TipoColaborador { get; set; }
     }
 }

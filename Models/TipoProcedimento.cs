@@ -7,9 +7,9 @@ namespace ProjetoFinalJulia.Models
     [Table("TipoPocedimento")]
     public class TipoProcedimento
     {
-        [Column("TipoPocedimentoId")]
+        [Column("Id")]
         [Display(Name = "Id do Tipo do Procedimento")]
-        public int TipoPocedimentoId { get; set; }
+        public int Id { get; set; }
 
         [Column("TipoProcedimentoNome")]
         [Display(Name = "Tipo do Procedimento")]

@@ -1,0 +1,39 @@
+﻿@model ProjetoFinalJulia.Models.ProcedimentoRealizado
+@{
+    Layout = null;
+}
+<link href="~/css/imprimir.css" rel="stylesheet" />
+<div>
+    <main>
+        <header>
+            <img src="~/Img/logo2.png" alt="">
+        </header>
+        <div class="informacoes">
+            <div>
+                <h3>NOME DO CLIENTE: @Html.DisplayFor(model => model.Cliente.ClienteNome)</h3>
+                <h3>SEXO: @Html.DisplayFor(model => model.Cliente.ClienteSexo)</h3>
+            </div>
+            <div>
+                <h3>COLABORADOR: @Html.DisplayFor(model => model.Colaborador.ColaboradorNome)</h3>
+                <h3>CLÍNICA: Espaço BemViver.</h3>
+            </div>
+        </div>
+        <div class="procedimento">
+            <div class="caixa">
+                <h2>PROCEDIMENTO: @Html.DisplayFor(model => model.Procedimento.ProcedimentoNome)</h2>
+                <h4>OBSERVAÇÃO: @Html.DisplayFor(model => model.Procedimento.ProcedimentoObservacao)</h4>
+            </div>
+            <div class="">
+                <h4>PROFISSIONAL: @Html.DisplayFor(model => model.Colaborador.ColaboradorNome)</h4>
+                <h4>DATA DE COLETA: @Html.DisplayFor(model => model.DataRealizacao) </h4>
+            </div>
+        </div>
+        <div class="resultado">
+            <h3>RESULTADO:</h3>
+            <h3>@Html.DisplayFor(model => model.ObservacaoRealizacao)</h3>
+        </div>
+        <div class="rodape">
+            <h4>METODOLOGIA: JAFFÉ AUTOMATIZADO</h4>
+        </div>
+    </main>
+</div>
